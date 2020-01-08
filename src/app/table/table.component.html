@@ -1,0 +1,28 @@
+<div>
+  <button class="btn" (click)="createRow()">Add new record</button>
+  <div *ngIf="rows && rows.length" trackBy>
+    <div class="app-table">
+      <app-row>
+        <app-head-cell>id</app-head-cell>
+        <app-head-cell>first name</app-head-cell>
+        <app-head-cell>last name</app-head-cell>
+        <app-head-cell>email</app-head-cell>
+        <app-head-cell>actions</app-head-cell>
+      </app-row>
+      <app-row *ngFor="let row of rows; trackBy:trackById" >
+        <app-cell >
+          {{row.id}}
+        </app-cell>
+        <app-cell [(value)]="row.firstName" [edit]="editRows[row.id]"></app-cell>
+        <app-cell [(value)]="row.lastName" [edit]="editRows[row.id]"></app-cell>
+        <app-cell [(value)]="row.email" [edit]="editRows[row.id]"></app-cell>
+        <app-cell>
+          <fa-icon (click)="onEdit(row)" class="icon" [icon]="faEdit"></fa-icon>
+          <fa-icon (click)="removeRow(row)" class="icon" [icon]="faTrash"></fa-icon>
+        </app-cell>
+      </app-row>
+    </div>
+
+  </div>
+
+</div>

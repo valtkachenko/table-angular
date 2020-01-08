@@ -1,0 +1,9 @@
+<div *ngIf="!edit && value">{{ value }}</div>
+
+<div *ngIf="!value">
+  <ng-content></ng-content>
+</div>
+
+<div *ngIf="edit">
+  <input [(ngModel)]="value"  type="text">
+</div>

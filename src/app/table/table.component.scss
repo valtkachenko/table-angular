@@ -1,0 +1,26 @@
+.app-table {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.icon {
+  padding: 5px;
+  border-radius: 5px;
+
+  &:hover {
+    background: #ececec;
+    transition: background-color 0.2s ease-in-out;
+  }
+}
+
+.btn {
+  padding: 5px;
+  border-radius: 5px;
+  background: #ececec;
+  margin: 5px;
+  :hover {
+    transition: background-color 0.2s ease-in-out;
+    background: #bebebe;
+  }
+}
